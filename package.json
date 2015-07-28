@@ -16,6 +16,7 @@
     "gulp-babel": "^5.1.0",
     "gulp-eslint": "^0.15.0",
     "gulp-karma": "0.0.4",
+    "gulp-menu": "^0.2.2",
     "gulp-nunjucks-html": "^1.2.2",
     "gulp-sass": "^2.0.4",
     "gulp-webserver": "^0.9.1",
