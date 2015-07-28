@@ -1,5 +1,7 @@
 var gulp = require('gulp');
-var babel = require('gulp-babel');
+var babelify = require('babelify');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
 var eslint = require('gulp-eslint');
 var karma = require('gulp-karma');
 
@@ -7,10 +9,17 @@ var jsGlob = 'src/js/**/*.js';
 var specGlob = 'spec/**/*.js';
 
 gulp.task('build:js', function () {
-  return gulp.src('src/js/index.js')
-    .pipe(babel())
+  browserify({
+  entries: 'src/js/index.js',
+  debug: true
+  })
+    .transform(babelify)
+    .bundle()
+    .pipe(source('index.js'))
     .pipe(gulp.dest('build/js'));
 });
+
+
 
 gulp.task('lint:js', function () {
   return gulp.src(jsGlob)
