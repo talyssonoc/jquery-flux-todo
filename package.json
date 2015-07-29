@@ -1,7 +1,7 @@
 {
-  "name": "front-end-boilerplate",
+  "name": "jquery-flux-todo",
   "version": "1.0.0",
-  "description": "My boilerplate for front-end projects",
+  "description": "Experimental jQuery app using Flux architecture",
   "main": "index.js",
   "scripts": {
     "test": "gulp test"
@@ -30,5 +30,10 @@
     "phantomjs": "^1.9.17",
     "require-dir": "^0.3.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "keymirror": "^0.1.1",
+    "lodash.template": "^3.6.2"
   }
 }

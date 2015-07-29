@@ -1,18 +1,6 @@
-# Front-end boilerplate
+# jQuery Flux Todo
 
-My boilerplate for front-end projects.
-
-## Features
-
-- Nunjucks templates
-- Babel JavaScript compiler
-- SASS/SCSS CSS compiler
-- Karma + Mocha + Chai tests
-
-## Dependencies
-
-- [NodeJS](http://nodejs.org/)
-- [Gulp](http://github.com/gulpjs/gulp)
+It's a experimental jQuery app using Flux architecture
 
 ## Gulp tasks
 
