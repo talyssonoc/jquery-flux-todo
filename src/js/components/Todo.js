@@ -1,19 +1,14 @@
 var $ = require('jquery');
 var Template = require('lodash.template');
 
+var Component = require('../lib/Component');
+
 var Todo = function Todo(data) {
-  this.data = data;
+  Component.call(this, data);
+
   this.template = Template($('[data-template="todo"]').html());
 };
 
-Todo.prototype.render = function render() {
-  var className = ['todo'];
-
-  this.data.complete && className.push('complete');
-
-  this.data.className = className.join(' ');
-
-  return this.template(this.data);
-};
+Todo.prototype = $.extend({}, Component.prototype, Todo.prototype);
 
 module.exports = Todo;
