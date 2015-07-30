@@ -1,3 +1,5 @@
+var $ = require('jquery');
+
 var getStoresMap = function getStoresMap(stores) {
   var storesMap = {};
 
@@ -12,7 +14,7 @@ var App = function App(options) {
   this.stores = getStoresMap(options.stores || []);
   this.dispatcher = options.dispatcher;
   this.component = options.component;
-  this.element = options.element;
+  this.$element = $(options.element);
 
   this.registerStores();
 };
@@ -24,8 +26,8 @@ App.prototype.registerStores = function registerStores() {
 };
 
 App.prototype.start = function start(initialData) {
-  this.component = new this.component(this.element, initialData);
-  this.component.init();
+  this.component = new this.component(initialData);
+  this.$element.html(this.component.mount());
 };
 
 module.exports = App;
